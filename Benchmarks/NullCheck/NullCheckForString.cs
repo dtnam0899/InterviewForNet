@@ -60,6 +60,16 @@ namespace Benchmarks.NullCheck
         }
 
         [Benchmark]
+        public void NullOrWhiteSpace_Method()
+        {
+            message = null;
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                message = value;
+            }
+        }
+
+        [Benchmark]
         public void Default_Operator()
         {
             message = null;

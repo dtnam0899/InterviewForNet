@@ -8,8 +8,9 @@ class Program
     {
 
         #region NullCheck
-        BenchmarkRunner.Run<NullCheckForString>();
-        BenchmarkRunner.Run<NullCheckForObject>();
+        //BenchmarkRunner.Run<NullCheckForString>();
+        //BenchmarkRunner.Run<NullCheckForObject>();
+        BenchmarkRunner.Run<NullOrEmptyCheckForList>();
         #endregion
     }
 }

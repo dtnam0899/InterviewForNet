@@ -7,79 +7,79 @@ namespace Benchmarks.NullCheck
     [SimpleJob(iterationCount: 25)]
     public class NullCheckForObject
     {
-        private User user;
+        private User _user;
 
         [Benchmark]
         public void Equal_Operator()
         {
-            user = null;
-            if (user == null)
+            _user = null;
+            if (_user == null)
             {
-                user = new User();
+                _user = new User();
             }
         }
 
         [Benchmark]
         public void Equals_Method()
         {
-            user = null;
-            if (Equals(user, null))
+            _user = null;
+            if (Equals(_user, null))
             {
-                user = new User();
+                _user = new User();
             }
         }
 
         [Benchmark]
         public void ReferenceEquals_Method()
         {
-            user = null;
-            if (ReferenceEquals(user, null))
+            _user = null;
+            if (ReferenceEquals(_user, null))
             {
-                user = new User();
+                _user = new User();
             }
         }
 
         [Benchmark]
         public void Is_Operator()
         {
-            user = null;
-            if (user is null)
+            _user = null;
+            if (_user is null)
             {
-                user = new User();
+                _user = new User();
             }
         }
 
         [Benchmark]
         public void Default_Operator()
         {
-            user = null;
-            if (user == default)
+            _user = null;
+            if (_user == default)
             {
-                user = new User();
+                _user = new User();
             }
         }
 
         [Benchmark]
         public void Coalesce_Operator()
         {
-            user = null;
-            user = user ?? new User();
+            _user = null;
+            _user = _user ?? new User();
         }
 
         [Benchmark]
         public void Ternary_Operator()
         {
-            user = null;
-            user = user == null ? new User() : user;
+            _user = null;
+            _user = _user == null ? new User() : _user;
         }
 
         [Benchmark]
         public void Is_Operator_Braces()
         {
-            user = null;
-            if (user is not { })
+            _user = null;
+            if (_user is not { })
             {
-                user = new User();
+                _user = new User();
             }
         }
     }

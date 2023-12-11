@@ -5,12 +5,12 @@ namespace Benchmarks.Utils
 {
     public class Utils
     {
-        string[] names = { "James", "Cate", "Dave", "Allen", "Monica", "Amy", "John", "Mark", "Rose", "Mike" };
+        private static string[] names = { "James", "Cate", "Dave", "Allen", "Monica", "Amy", "John", "Mark", "Rose", "Mike" };
 
-        public IEnumerable<User> GenerateRandomUserList(int size)
+        public static IEnumerable<User> GenerateRandomUserList(int size)
         {
-            Random random = new Random();
-            List<User> list = new List<User>();
+            Random random = new();
+            List<User> list = new();
 
             while (size > 0)
             {
@@ -28,7 +28,7 @@ namespace Benchmarks.Utils
 
         public IEnumerable<User> GenerateUserList(int size)
         {
-            List<User> list = new List<User>();
+            List<User> list = new();
 
             while (size > 0)
             {
@@ -50,7 +50,7 @@ namespace Benchmarks.Utils
 
         public static IEnumerable<string> GenerateRandomStringList(int size)
         {
-            List<string> list = new List<string>();
+            List<string> list = new();
 
             while (size > 0)
             {
@@ -67,7 +67,7 @@ namespace Benchmarks.Utils
         /// <returns></returns>
         public IEnumerable<string> GenerateRandomStringListWithNull(int size)
         {
-            List<string> list = new List<string>();
+            List<string> list = new();
 
             while (size > 0)
             {

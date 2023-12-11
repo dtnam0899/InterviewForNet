@@ -1,16 +1,21 @@
 ﻿using BenchmarkDotNet.Running;
-using Benchmarks.NullCheck;
+using Benchmarks.Mapster;
 
 namespace Benchmarks;
-class Program
+
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
 
         #region NullCheck
         //BenchmarkRunner.Run<NullCheckForString>();
         //BenchmarkRunner.Run<NullCheckForObject>();
-        BenchmarkRunner.Run<NullOrEmptyCheckForList>();
+        //BenchmarkRunner.Run<NullOrEmptyCheckForList>();
+        #endregion
+
+        #region Mapster
+        BenchmarkRunner.Run<MappingForList>();
         #endregion
     }
 }
